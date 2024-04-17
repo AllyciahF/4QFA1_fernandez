@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <form id="Sign-up" class="sign"> 
+        <fieldset form="Sign-Up">
+        <legend>Sign-Up: </legend>
+        <label for="Name">Name:</label>
+        <input type="text" id="Name" name="Name" onblur="myFunction1()"><br><br>
+        <label for="Name">Userame:</label>
+        <input type="text" id="uName" name="uName" onblur="myFunction2()"><br><br>
+        <label for="pwd">Password:</label>
+        <input type="password" id="pwd" name="pwd" onblur="myFunction3()"><br><br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age"onblur="myFunction4()"><br><br>
+        <label for="gen">Gender:</label></br>
+        <select name="gender" id="gen">
+        <option value="m">Male</option>
+        <option value="f">Female</option>
+        <option value="r">Rather not say</option>
+        </select><br><br>
+        <label for="email">Enter your email:</label>
+        <input type="email" id="email" name="email" onblur="myFunction5()"><br><br>
+
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+        </fieldset>
+        </form>
+
+        <div id="output"></div>
+
+        <script >
+            const form = document.getElementById('Sign-up');
+            const out = document.getElementById('output');
+            form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const name = document.getElementById('Name').value;
+        const uname = document.getElementById('uName').value;
+        const gender = document.getElementById('gen').value;
+        const email = document.getElementById('email').value;
+
+
+
+        output.innerHTML = `<p>Name: ${name}</p>
+                            <p>Email: ${email}</p>
+                            <p>Username: ${uname}</p>
+                            <p>Gender: ${gender}</p>`;
+    });
+    form.addEventListener('reset', function() {
+        output.innerHTML = ''
+        document.getElementById("Name").style.borderColor="black"
+        document.getElementById("uName").style.borderColor="black"
+        document.getElementById("pwd").style.borderColor="black"
+        document.getElementById("age").style.borderColor="black"
+        document.getElementById("gen").style.borderColor="black"
+        document.getElementById("email").style.borderColor="black";
+    });
+
+            function myFunction1() {
+            var x = document.getElementById("Name").value;
+            if (x == ""){
+                document.getElementById("Name").style.borderColor="red";
+            }else{
+                document.getElementById("Name").style.borderColor="green";
+            }
+         
+        }
+        function myFunction2() {
+            var x = document.getElementById("uName").value;
+            if (x == ""){
+                document.getElementById("uName").style.borderColor="red";
+            }else{
+                document.getElementById("uName").style.borderColor="green";
+            }
+   
+        }
+        function myFunction3() {
+            var x = document.getElementById("pwd").value;
+            if (x == ""){ 
+                document.getElementById("pwd").style.borderColor="red";
+            }else{
+                document.getElementById("pwd").style.borderColor="green";
+            }
+          
+        }
+        function myFunction4() {
+            var x = document.getElementById("age").value;
+            {
+                if (x == ""){ 
+                document.getElementById("age").style.borderColor="red";
+            }else{
+                document.getElementById("age").style.borderColor="green";
+            }
+         
+        }
+    }
+        function myFunction5() {
+            var x = document.getElementById("email").value;
+            if (x == ""){
+                document.getElementById("email").style.borderColor="red";
+            }else{
+                document.getElementById("email").style.borderColor="green";
+            }
+  
+            }
+
+
+        </script>
+
+        <style>
+
+            input{
+                border: 3px solid;
+    
+            }
+
+            select{
+                border: 3px solid;
+            }
+
+            .sign {
+                margin: auto;
+                width: 50%;
+                padding: 10px;
+                background-color: black;
+                color: rgb(255, 255, 255);
+                font-style: italic;
+              
+            } 
+            
+                
+          
+
+        
+        </style>
+        
+          
+    
+</body>
+</html>
